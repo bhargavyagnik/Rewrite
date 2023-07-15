@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Articuwrite</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div id="intro">
+      Articuwrite
+    </div>
+    <div class="section">
+      <p class="section-title">Context or Sample</p>
+      <textarea id="textInput" placeholder="Enter text"></textarea>
+    </div>
+    <div class="section">
+      <p class="section-title">Prompt <span class="question-mark">?</span> </p>
+    </div>
+    <div class="section">
+      <div class="dropdown-container">
+        <select id="dropdown1">
+          <option value="customprompt">Custom Prompt</option>
+          <option value="email">Email</option>
+          <option value="chat">Chat</option>
+          <option value="write">Write</option>
+        </select>
+        <select id="dropdown2" style="display: none;">
+        </select>
+      </div>
+    </div>
+    <div class="section">
+      <p class="section-title">Prompt command</p>
+      <input type="text" id="singleLineInput" placeholder="Prompt Editor" value="Rewrite this to articulate better">
+    </div>
+    <button type="submit" id="genButton">Generate</button>
+    <div class="section">
+      <div class="copy-container">
+        <button id="copyButton" style="display: none">Copy</button>
+        <pre class="gen-text" id="generated-text" style="display: none"></pre>       
+    </div>
+    </div>
+  </div>
+  <script src="scripts/script.js"></script>
+</body>
+</html>

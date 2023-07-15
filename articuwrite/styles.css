@@ -1,0 +1,164 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F1F3F6;
+}
+
+.container {
+  width: 500px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+#intro {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: #333;
+  font-size: 23px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-weight:bold;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+  font-size: 3vh;
+  position: relative;
+}
+
+.question-mark {
+  position: absolute;
+  top: -7px;
+  left: 50px;
+  font-size: 10px;
+  color: rgba(51, 51, 51, 0.5); /* Semi-transparent color */
+}
+
+.question-mark:hover::after {
+  content: "Tips: Suppose you want to mail regarding leave, select (Email > Request Leave) from dropdown to taylor text for it. "; /* Text to display on hover */
+  position: absolute;
+  top: -30px; /* Adjust the vertical position of the tooltip */
+  padding: 5px;
+  width: 200px;
+  transform: translateX(5%);
+  background-color: #5b0eeb68;
+  color: #ffffff; /* Tooltip text color */
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: pre-wrap; /* Preserve line breaks and wrap long words */
+  word-wrap: break-word; 
+}
+
+#textInput {
+  width: 95%;
+  height: 100px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #EAEFF5;
+  box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.1), inset -4px -4px 6px rgba(255, 255, 255, 0.5);
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.dropdown-container {
+  display: flex;
+}
+
+.dropdown-container select {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #EAEFF5;
+  box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.1), inset -4px -4px 6px rgba(255, 255, 255, 0.5);
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  margin-right: 10px;
+}
+
+#singleLineInput {
+  width: 95%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #EAEFF5;
+  box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.1), inset -4px -4px 6px rgba(255, 255, 255, 0.5);
+  outline: none;
+  font-size: 16px;
+  color: #333;
+}
+
+#genButton {
+  padding: 10px 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background-color:#EAEFF5;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1), -4px -4px 6px rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: text-shadow 0.3s ease-in-out; /* Transition effect for smooth hover */
+
+  /* Added properties for centering the button */
+  display: block;
+  margin: 0 auto;
+}
+
+#genButton:hover {
+  color: #5b0eeb;
+}
+
+#generated-text {
+  font-size: 15px;
+  color: #333;
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #EAEFF5;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1), -4px -4px 6px rgba(255, 255, 255, 0.5);
+  white-space: pre-wrap;
+}
+
+.copy-container {
+  position: relative;
+}
+
+#copyButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #EAEFF5;
+  border-color: #5b0eeb;
+  border-width: 16px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#copyButton:hover {
+  background-color: #5b0eeb;
+  color: white;
+}
+.copy-container {
+  position: relative;
+}
