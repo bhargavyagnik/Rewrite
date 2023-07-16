@@ -1,9 +1,9 @@
 {
     "manifest_version": 3,
-    "name": "Articuwrite",
+    "name": "ReWrite",
     "version": "0.0.1",
     "action": {
-        "default_title": "Articuwrite",   
+        "default_title": "ReWrite",   
         "default_popup": "popup.html" 
       },
     "description": "AI based paraphraser that would help you articulate or improve your text to give it more impactful meaning",
@@ -14,9 +14,15 @@
           "128": "icons/icon128.png"
         },
     "author": "bhargavyagnik99@gmail.com",  
-    "permissions": ["activeTab", "scripting", "storage","tabs"],
+    "permissions": ["storage","tabs","background"],
     "options_ui": {
         "page": "options/options.html",
         "open_in_tab": false
+    },
+    "background": {
+      "scripts": [
+        "background.js"
+      ],
+      "persistent": false
     }
   }

@@ -129,7 +129,7 @@ function generate(text) {
 function main() {
   chrome.storage.sync.get('cohereapiKey', ({ cohereapiKey }) => {
     if (!cohereapiKey) {
-      console.log("API key not set");
+      alert("Cohere API key is not set. Go to Manage Extensions > Extension options ")
     } else {
       const selectedText = document.getElementById('textInput').value+"Using the above context, "+document.getElementById("singleLineInput").value;
       generate(selectedText);
