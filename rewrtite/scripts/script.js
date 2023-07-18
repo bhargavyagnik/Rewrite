@@ -9,9 +9,10 @@ function showDropdown2() {
     // Modify the options for Dropdown 2 when "Email" is selected
     dropdown2.innerHTML = `
       <option value=""></option>
+      <option value="Reply to the given email">Reply</option>
       <option value="accept a meeting request or a time suggestion">Meeting Accept</option>
       <option value="introduce yourself to a cold contact">Introduct yourself</option>
-      <option value="request any information/material that you need">Request</option>
+      <option value="request about ">Request</option>
       <option value="offer your company's product/services to a potential customer/client"> Sales outreach</option>
       <option value="congratulate the recipient on their achievement">Congratulate</option>
       `;
@@ -88,6 +89,7 @@ document.getElementById('dropdown2').addEventListener('change', function(event) 
 });
 
 function generate(text) {
+  showLoadingSpinner()
   // Use the user's stored API key
   chrome.storage.sync.get('cohereapiKey', ({ cohereapiKey }) => {
     const options = {
@@ -108,12 +110,13 @@ function generate(text) {
         return_likelihoods: "NONE",
       }),
     };
-
+    
     fetch('https://api.cohere.ai/v1/generate', options)
       .then((response) => response.json())
       .then((response) => {
+        hideLoadingSpinner();
         if (response.generations[0].text === undefined) {
-          console.log("There was an error: " + response.message);
+          alert(response);
         } else {
           document.getElementById("generated-text").textContent  = response.generations[0].text;
           document.getElementById("generated-text").style.display = "block";
@@ -121,7 +124,8 @@ function generate(text) {
         }
       })
       .catch((error) => {
-        alert("Error"+error);
+        hideLoadingSpinner();
+        alert("Error Accessing API, try again in few minutes.\n(Hint: The Free API has rate limit of 5 calls/minute. Upgrade to Production API in that case.)\n\nIf issue persists, contact hello@bhargavyagnik.com");
       });
   });
 }
@@ -135,6 +139,19 @@ function main() {
       generate(selectedText);
     }
   });
+  
+}
+
+function showLoadingSpinner() {
+  // Show loading spinner by modifying CSS or adding/removing classes
+  document.getElementById('copyButton').style.display = 'none';
+  document.getElementById('generated-text').style.display = 'none';
+  document.getElementById('loadingSpinner').style.display = 'block';
+}
+
+function hideLoadingSpinner() {
+  // Hide loading spinner by modifying CSS or adding/removing classes
+  document.getElementById('loadingSpinner').style.display = 'none';
 }
 
 function copyText() {

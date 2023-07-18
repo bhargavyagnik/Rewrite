@@ -13,6 +13,11 @@
         text-align: center;
         margin-bottom: 20px;
       }
+      #linkcohere {
+        text-align: center;
+        margin-bottom: 8px;
+      }
+
 
       form {
         display: flex;
@@ -51,9 +56,10 @@
   </head>
   <body>
     <h1>Add Cohere API key</h1>
+    <div id="linkcohere"> <a href="https://dashboard.cohere.ai/api-keys" target="_blank">Get your Free Trial Key</a></div>
     <form>
       <label for="apiKey">API Key:</label>
-      <input type="text" id="cohereapiKey" placeholder="Enter your API key">
+      <input type="text" id="cohereapiKey" placeholder="Paste your Cohere API key: ">
       <button type="submit">Save</button>
     </form>
     <div id="status"></div>

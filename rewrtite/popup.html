@@ -11,7 +11,7 @@
     </div>
     <div class="section">
       <p class="section-title">Context or Sample</p>
-      <textarea id="textInput" placeholder="Give a context for which you want to generate text or a sample you want to rephrase"></textarea>
+      <textarea id="textInput" placeholder="Give a context for which you want to generate text or a sample you want to rephrase. E.g.&#10;&#x09;Dear sir, &#10;&#x09;&#x09;I will be out of town from 10th November. &#10;&#x09;Thanks"></textarea>
     </div>
     <div class="section">
       <p class="section-title">Prompt <span class="question-mark">?</span> </p>
@@ -33,6 +33,13 @@
       <input type="text" id="singleLineInput" placeholder="Prompt Editor" value="Rewrite this to articulate better">
     </div>
     <button type="submit" id="genButton">Generate</button>
+    <div class="load-wrapp" id="loadingSpinner">
+      <div class="load-3">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
     <div class="section">
       <div class="copy-container">
         <button id="copyButton" style="display: none">Copy</button>

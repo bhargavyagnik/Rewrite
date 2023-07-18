@@ -16,7 +16,7 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 900;
   letter-spacing: 1.5px;
-  color: #333;
+  color: #5b0eeb;
   font-size: 23px;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -28,7 +28,7 @@ body {
 
 .section-title {
   font-weight:bold;
-  color: #333;
+  color: #5b0eeb;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 10px;
   font-size: 3vh;
@@ -71,22 +71,46 @@ body {
   color: #333;
   margin-bottom: 10px;
 }
+#textInput::placeholder{
+  font-family: "Arial", sans-serif;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.25);
+}
 
 .dropdown-container {
   display: flex;
+  align-items: center;
 }
 
 .dropdown-container select {
-  width: 50%;
   padding: 10px;
   border: none;
   border-radius: 8px;
   background-color: #EAEFF5;
-  box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.1), inset -4px -4px 6px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   outline: none;
   font-size: 16px;
   color: #333;
   margin-right: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.dropdown-container select:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-container select:focus {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-container select option {
+  background-color: #EAEFF5;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-container select option:hover {
+  background-color: #b7b7b7;
 }
 
 #singleLineInput {
@@ -161,4 +185,53 @@ body {
 }
 .copy-container {
   position: relative;
+}
+
+
+.load-wrapp {
+  display: none;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 100px;
+  padding: 20px 20px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.load-wrapp p {
+  padding: 0 0 20px;
+}
+.load-wrapp:last-child {
+  margin-right: 0;
+}
+
+.line {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #5b0eeb;
+}
+
+
+.load-3 .line:nth-last-child(1) {
+  animation: loadingC 0.6s 0.1s linear infinite;
+}
+.load-3 .line:nth-last-child(2) {
+  animation: loadingC 0.6s 0.2s linear infinite;
+}
+.load-3 .line:nth-last-child(3) {
+  animation: loadingC 0.6s 0.3s linear infinite;
+}
+
+@keyframes loadingC {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
