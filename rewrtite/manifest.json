@@ -14,7 +14,7 @@
           "128": "icons/icon128.png"
         },
     "author": "bhargavyagnik99@gmail.com",  
-    "permissions": ["storage","background","scripting"], 
+    "permissions": ["storage","background"], 
     "options_ui": {
         "page": "options/options.html",
         "open_in_tab": false
