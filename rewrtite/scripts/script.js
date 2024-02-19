@@ -178,3 +178,4 @@ document.getElementById('copyButton').addEventListener('click', function(event) 
   event.preventDefault();
   copyText();
 });
+

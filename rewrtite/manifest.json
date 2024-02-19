@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "ReWrite",
-    "version": "0.0.1",
+    "version": "1.0.1",
     "action": {
         "default_title": "ReWrite",   
         "default_popup": "popup.html" 
@@ -14,12 +14,18 @@
           "128": "icons/icon128.png"
         },
     "author": "bhargavyagnik99@gmail.com",  
-    "permissions": ["storage","background"],
+    "permissions": ["storage","background"], 
     "options_ui": {
         "page": "options/options.html",
         "open_in_tab": false
     },
     "background": {
       "service_worker": "scripts/background.js"
-    }
+    },
+    "content_scripts": [
+      {
+      "matches":["https://mail.google.com/*"],
+      "js":["scripts/contentscript_gmail.js"] 
+      }
+    ]
   }
