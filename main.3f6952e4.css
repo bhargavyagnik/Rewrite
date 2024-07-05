@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:900|Roboto+Mono:300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Barlow:900|Roboto+Mono:300,400,700);
+
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 /*!
@@ -339,7 +340,7 @@ textarea {
 }
 
 a {
-    color: #001aff;
+    color: #5b0deb;
     text-decoration: none
 }
 
@@ -434,7 +435,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Roboto Mono, Helvetica, Arial, sans-serif;
+    font-family: Barlow, sans-serif;
     font-weight: 700;
     line-height: 1.1;
     color: #000
@@ -5809,16 +5810,6 @@ h2 {
     display: inline-block
 }
 
-.h2:after,
-.h2:before,
-h2:after,
-h2:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    background-color: #000;
-    width: 1px
-}
 
 .h2:before,
 h2:before {
@@ -6556,9 +6547,8 @@ textarea {
 
     .carousel {
         position: relative;
-        width: 80%;
-        margin: 0 auto;
-        max-width: 500px;
+        width: 100%;
+        margin: 0 auto; 
         overflow: hidden;
         border-radius: 10px;
         /* box-shadow: 0 4px 8px rgba(0,0,0,0.2); */
@@ -6572,6 +6562,7 @@ textarea {
       
       .carousel-item {
         min-width: 100%;
+        height: 100%;
         transition: opacity 0.5s ease-in-out;
         position: absolute;
         opacity: 0;
@@ -6583,7 +6574,11 @@ textarea {
       }
       
       .carousel-item img {
+        height: 100%;
         width: 100%;
+        object-fit: scale-down;
+        display: block;
+        margin: 0 auto;
         border-radius: 10px;
       }
       

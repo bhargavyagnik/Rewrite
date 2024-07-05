@@ -190,6 +190,6 @@ function currentSlide(index) {
   showSlide(index - 1);
 }
 
-setInterval(nextSlide, 10000);
+setInterval(nextSlide, 8500);
 
 showSlide(currentIndex);
