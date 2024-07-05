@@ -4650,7 +4650,7 @@ fieldset[disabled] .navbar-default .btn-link:hover {
 }
 
 .navbar-inverse {
-    background-color: black;
+    background-color: #5b0deb;
     border-color: transparent
 }
 
@@ -5628,7 +5628,7 @@ button.close {
 #site-border-left,
 #site-border-right,
 #site-border-top {
-    background: #000;
+    background: #ffffff;
     position: fixed;
     z-index: 1
 }
@@ -6549,3 +6549,53 @@ textarea {
         background-color: #6f6f6fd1;
         cursor: pointer;
     }
+
+    .rewrite-text{
+        color: #5b0eeb;
+    }
+
+    .carousel {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        max-width: 800px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+      
+      .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+      .carousel-item {
+        min-width: 100%;
+        transition: opacity 0.5s ease-in-out;
+      }
+      
+      .carousel-item img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      
+      .carousel-dots {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+      }
+      
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      
+      .dot.active {
+        background-color: #717171;
+      }
