@@ -1,44 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 50px;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <meta content="description" name="description">
+        <meta name="google" content="notranslate" />
+        <!-- Disable tap highlight on IE -->
+        <meta name="msapplication-tap-highlight" content="no">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+        <title>ReWrite </title>
+        <link href="./main.3f6952e4.css" rel="stylesheet">
+        <link href="./rewrtite/icons/icon16.png " rel="icon">
+    </head>
+    <body class="">
+        <div id="site-border-top"></div>
+        <!-- Add your content of header -->
+        <header>
+            <nav class="navbar  navbar-fixed-top navbar-inverse" >
+                <div class="container">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar-collapse">
+                        <ul class="nav navbar-nav ">
+                            <li><a href="./index.html" title="">Home</a></li>
+                            <li><a href="./newupdate101.html" title="">New Updates</a></li>
+                            <li><a href="./thankyou.html" title="">Installation</a></li>
+                            <li><a href="https://chrome.google.com/webstore/detail/rewrite/hfcabmeacpcbomdjcoipnnddiofbgokj" title="">Download</a></li>
+                            <li><a href="https://github.com/bhargavyagnik/Rewrite" title="">Github</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="section-container">
+            <div class="container">
+                <div class="row">
+                    <img src="https://gifdb.com/images/high/keanu-reeves-thank-you-ntjxhapoho2tyv7m.gif" class="img-responsive">
+                    <h2> -> Configuration</h2>
+                    <ol>
+                        <li> You need to add Cohere API key. (Cohere provides the text generation model - its free*).
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    Visit <a href="dashboard.cohere.ai/api-keys">Cohere dashboard to access API keys</a>
+                                    <img src="assets/conf_dashb.png" class="img-responsive">
+                                </div>
+                                <div class="col-sm-3">
+                                    Copy API keys
+                                    <img src="assets/conf_api.png" class="img-responsive">
+                                </div>
+                                <div class="col-sm-4">
+                                    Paste them in Manage Extension > Extension Options
+                                    <img src="assets/conf_options.png" class="img-responsive">
+                                </div>
 
-        h1 {
-            color: #333;
-        }
+                            </div>
+                        <li>Pin the extension and you are ready to use !</li>
+                      </ol>
+                </div>
+            </div>
+        </div>
+       
+        <!-- <div class="float-container white-text-container">
+            <span class="wave">
+                <p>Tap👋</p>
+            </span>
+        </div>
+        <div id="chat-circle" class="btn btn-raised shake" style="background-image:url(assets/apple-icon-180x180.png);background-size:contain;visibility:visible">
+        </div>
+        <div class="chat-box">
+            <div class="chat-box-header">
+                <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+            </div>
+            <div class="chat-box-body">
+                <div class="chat-box-overlay">
+                </div>
+                <div class="chat-logs">
+                </div>
+                
+            </div>
+            <div class="chat-input">
+                <form>
+                    <input type="text" id="chat-input" placeholder="Send a message..."/>
+                    <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons">send</i></button>
+                </form>
+            </div>
+        </div>  -->
 
-        p {
-            color: #666;
-        }
-
-    </style>
-    <title>Thank You for Installing Our Extension</title>
-    <script async src="https://tally.so/widgets/embed.js"></script>
-
-    <script>
-    window.TallyConfig = {
-      "formId": "nGdBo2",
-      "popup": {
-        "emoji": {
-          "text": "👋",
-          "animation": "wave"
-        }
-      }
-    };
-    </script>
-</head>
-<body>
-    <h1>Thank You for Installing Our Extension!</h1>
-    <p>We appreciate your support.</p>
-    
-</body>
+        <script type="text/javascript" src="./main.70a66962.js"></script>
+    </body>
 </html>
