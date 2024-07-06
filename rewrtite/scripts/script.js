@@ -88,47 +88,66 @@ document.getElementById('dropdown2').addEventListener('change', function(event) 
   updatecommand();
 });
 
-function generate(text) {
-  showLoadingSpinner()
-  // Use the user's stored API key
-  chrome.storage.sync.get('cohereapiKey', ({ cohereapiKey }) => {
-    const options = {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-        authorization: "Bearer " + cohereapiKey,
-      },
-      body: JSON.stringify({
-        model: "command",
-        prompt: text,
-        max_tokens: 300,
-        temperature: 0,
-        k: 3,
-        p: 0.75,
-        stop_sequences: ["--"],
-        return_likelihoods: "NONE",
-      }),
-    };
-    
-    fetch('https://api.cohere.ai/v1/generate', options)
-      .then((response) => response.json())
-      .then((response) => {
-        hideLoadingSpinner();
-        if (response.generations[0].text === undefined) {
-          alert(response);
-        } else {
-          document.getElementById("generated-text").textContent  = response.generations[0].text;
-          document.getElementById("generated-text").style.display = "block";
-          document.getElementById("copyButton").style.display = "block";
-        }
-      })
-      .catch((error) => {
-        hideLoadingSpinner();
-        alert("Error Accessing API, try again in few minutes.\n(Hint: The Free API has rate limit of 5 calls/minute. Upgrade to Production API in that case.)\n\nIf issue persists, contact hello@bhargavyagnik.com");
-      });
-  });
+
+function generate(text){
+  const canCreate = await window.ai.canCreateTextSession();
+  if (canCreate !== "no") {
+
+    const session = await window.ai.createTextSession();
+
+
+    // Prompt the model and wait for the whole result to come back.  
+
+    const result = await session.prompt("Write me a poem");
+
+    console.log(result);
+
+  }
+
+
 }
+
+// function generate(text) {
+//   showLoadingSpinner()
+//   // Use the user's stored API key
+//   chrome.storage.sync.get('cohereapiKey', ({ cohereapiKey }) => {
+//     const options = {
+//       method: "POST",
+//       headers: {
+//         accept: "application/json",
+//         "content-type": "application/json",
+//         authorization: "Bearer " + cohereapiKey,
+//       },
+//       body: JSON.stringify({
+//         model: "command",
+//         prompt: text,
+//         max_tokens: 300,
+//         temperature: 0,
+//         k: 3,
+//         p: 0.75,
+//         stop_sequences: ["--"],
+//         return_likelihoods: "NONE",
+//       }),
+//     };
+    
+//     fetch('https://api.cohere.ai/v1/generate', options)
+//       .then((response) => response.json())
+//       .then((response) => {
+//         hideLoadingSpinner();
+//         if (response.generations[0].text === undefined) {
+//           alert(response);
+//         } else {
+//           document.getElementById("generated-text").textContent  = response.generations[0].text;
+//           document.getElementById("generated-text").style.display = "block";
+//           document.getElementById("copyButton").style.display = "block";
+//         }
+//       })
+//       .catch((error) => {
+//         hideLoadingSpinner();
+//         alert("Error Accessing API, try again in few minutes.\n(Hint: The Free API has rate limit of 5 calls/minute. Upgrade to Production API in that case.)\n\nIf issue persists, contact hello@bhargavyagnik.com");
+//       });
+//   });
+// }
 
 function main() {
   chrome.storage.sync.get('cohereapiKey', ({ cohereapiKey }) => {
